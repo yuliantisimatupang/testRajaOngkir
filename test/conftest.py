@@ -12,16 +12,16 @@ def hook(request):
   test_result =  request.session.testsfailed - get_error
 
   if test_result == 0:
-    with open('test_report', 'r') as file:
+    with open('test_report.json', 'r') as file:
       data = json.load(file)
     data['success'].append(1)
-    with open('test_report', 'w') as file:
+    with open('test_report.json', 'w') as file:
         json.dump(data, file, indent=4)
   else:
-    with open('test_report', 'r') as file:
+    with open('test_report.json', 'r') as file:
       data = json.load(file)
     data['success'].append(1)
-    with open('test_report', 'w') as file:
+    with open('test_report.json', 'w') as file:
         json.dump(data, file, indent=4)
 
 
@@ -34,7 +34,7 @@ def suite(request):
     "success" : []
   }
   jsonString = json.dumps(json_temp)
-  jsonFile = open ("test_report.json", "w")
+  jsonFile = open("test_report.json", "w")
   jsonFile.write(jsonString)
   jsonFile.close()
   yield
