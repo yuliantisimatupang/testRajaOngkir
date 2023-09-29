@@ -1,6 +1,8 @@
 name: Run test with cicd
 
 on: [push]
+#schedule:
+#  - cron: 0 0/5 0 ? * * * dijalankan setiap 5 menit
 #jobs yang dikerjakan
 jobs:
   run_api_automation:
