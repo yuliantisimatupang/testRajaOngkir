@@ -11,6 +11,7 @@ def test_send_report_slack():
   test_failed = len(data_json.get("failed"))
   test_all = test_success + test_failed
   success_rate = test_success / test_all * 100
+  report_link = "https://yuliantisimatupang.github.io/testRajaOngkir/report.html?sort=result"
 
   if test_failed > 0:
     color = "ff4040"
@@ -34,7 +35,7 @@ def test_send_report_slack():
             "type": "section",
             "text": {
               "type": "mrkdwn",
-              "text": f"This is result of automation testing.\n <https://github.com/{os.sep}report.html|View Report>"
+              "text": f"This is result of automation testing.\n <{report_link}|View Report>"
             }
           },
           {
