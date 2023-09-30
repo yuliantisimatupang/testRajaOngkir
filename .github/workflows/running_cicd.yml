@@ -1,7 +1,12 @@
 name: Run test with cicd
 #even
-on: [push]
-#schedule:
+on:
+  push:
+    branches:
+      - "*"
+  schedule:
+    - cron: 0 0 0 ? * SUN *
+    - #schedule:
 #  - cron: 0 0/5 0 ? * * * dijalankan setiap 5 menit
 #jobs yang dikerjakan
 jobs:
