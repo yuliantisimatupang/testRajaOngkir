@@ -1,5 +1,5 @@
 name: Run test with cicd
-
+#even
 on: [push]
 #schedule:
 #  - cron: 0 0/5 0 ? * * * dijalankan setiap 5 menit
@@ -22,7 +22,10 @@ jobs:
       - name: Run test with pytest
         run: pytest test -v
 
+      - name: Create html report
+        run: pytest --html=report.html
+
       - name: Send report to slack
-        run: pytest setting/notif_slack.py
+        run: pytest setting/report_html_slack.py
         env:
           pytest_webhook_slack: ${{ secrets.WEBHOOK_SLACK }}

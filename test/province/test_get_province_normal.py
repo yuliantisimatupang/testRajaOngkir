@@ -26,7 +26,8 @@ def test():
   results = req.json().get('rajaongkir')['results']
 
   # ASSERT
-  assert_that(status_code).is_equal_to(200)
+  assert_that(status_code).is_equal_to(400) # coba di bikin salah dulu
+  # assert_that(status_code).is_equal_to(200)
   assert_that(latency).is_less_than(max_latency)
   assert_that(description).is_equal_to('OK')
   # is_type_of(list) digunakan jika bentuk nya adalah list

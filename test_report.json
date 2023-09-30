@@ -1,8 +1,9 @@
 {
     "other": [],
-    "failed": [],
+    "failed": [
+        1
+    ],
     "success": [
-        1,
         1,
         1,
         1,
