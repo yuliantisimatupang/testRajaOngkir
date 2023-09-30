@@ -2,3 +2,4 @@ pytest
 requests
 assertpy
 jsonschema
+pytest-html
