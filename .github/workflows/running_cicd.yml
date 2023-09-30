@@ -6,7 +6,8 @@ on:
       - "*"
   schedule:
     - cron: '0 0 0,6 ? * SUN *'
-    - #schedule:
+
+    #schedule:
 #  - cron: 0 0/5 0 ? * * * dijalankan setiap 5 menit
 #jobs yang dikerjakan
 jobs:
