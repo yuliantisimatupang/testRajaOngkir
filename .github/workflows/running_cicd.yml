@@ -20,10 +20,7 @@ jobs:
           pip install -r requirement.txt
 
       - name: Run test with pytest
-        run: pytest test -v
-
-      - name: Create html report
-        run: pytest --html=report.html
+        run: pytest test -v --html=report.html
 
       - name: Send report to slack
         run: pytest setting/report_html_slack.py
